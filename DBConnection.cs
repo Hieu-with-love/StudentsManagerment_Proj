@@ -49,7 +49,7 @@ namespace StudentsManagerment_Proj
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Tải dữ liệu thất bại.\n"+ex.Message);
+                MessageBox.Show("Thực thi thất bại.\n"+ex.Message);
                 return 0;
             }
             finally
