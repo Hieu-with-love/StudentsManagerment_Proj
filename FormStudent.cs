@@ -12,8 +12,8 @@ namespace StudentsManagerment_Proj
 {
     public partial class frmStudent : Form
     {
-        PersonDAO stDAO = new StudentDAO();
-        string sql;
+        StudentDAO stDAO = new StudentDAO();
+        string sqlConn = "SELECT * FROM SinhVien";
         public frmStudent()
         {
             InitializeComponent();
@@ -21,8 +21,7 @@ namespace StudentsManagerment_Proj
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            sql = "SELECT * FROM SinhVien";
-            dgvStudent.DataSource = stDAO.LoadDataForDGV(sql);
+            dgvStudent.DataSource = stDAO.LoadDataForDGV(sqlConn);
             dgvStudent.Columns["id"].HeaderText = "ID";
             dgvStudent.Columns["hoten"].HeaderText = "Họ tên";
             dgvStudent.Columns["email"].HeaderText = "Email";
@@ -35,8 +34,29 @@ namespace StudentsManagerment_Proj
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Students st = new Students()
-            stDAO.Add()
+            bool gt = rdbWoman.Checked ? true : false;
+            Students st = new Students(txtId.Text, txtName.Text, txtEmail.Text, gt, txtAddress.Text, txtPhone.Text, txtCCCD.Text, dtpBirthday.Value);
+            string sql = "INSERT INTO SinhVien(hoten,email,gioitinh,diachi,sdt,cccd,ngaysinh) VALUES(@ht,@em,@gt,@dc,@sdt,@cc,@ns)";
+            stDAO.AddSt(sql,st);
+            dgvStudent.DataSource = stDAO.LoadDataForDGV(sqlConn);
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            bool gt = rdbWoman.Checked ? true : false;
+            Students st = new Students(txtId.Text, txtName.Text, txtEmail.Text, gt, txtAddress.Text, txtPhone.Text, txtCCCD.Text, dtpBirthday.Value);
+            string sql = "DELETE SinhVien WHERE id = @id";
+            stDAO.RemoveSt(sql,st);
+            dgvStudent.DataSource = stDAO.LoadDataForDGV(sqlConn);
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            bool gt = rdbWoman.Checked ? true : false;
+            Students st = new Students(txtId.Text, txtName.Text, txtEmail.Text, gt, txtAddress.Text, txtPhone.Text, txtCCCD.Text, dtpBirthday.Value);
+            string sql = "UPDATE SinhVien SET id=@id,hoten=@ht,email=@em,gioitinh=@gt,diachi=@dc,sdt=@sdt,cccd=@cc,ngaysinh=@ns WHERE id = @id";
+            stDAO.RemoveSt(sql, st);
+            dgvStudent.DataSource = stDAO.LoadDataForDGV(sqlConn);
         }
     }
 }

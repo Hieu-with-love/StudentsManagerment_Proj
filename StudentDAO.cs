@@ -13,6 +13,7 @@ namespace StudentsManagerment_Proj
     {
         public void AddSt(string sql, Students st)
         {
+
             SqlParameter[] lstParam = {
                 new SqlParameter("@ht", SqlDbType.NVarChar) { Value = st.Name },
                 new SqlParameter("@em", SqlDbType.VarChar) { Value = st.Email },
@@ -37,6 +38,13 @@ namespace StudentsManagerment_Proj
         {
             SqlParameter[] lstParam = {
                 new SqlParameter("@id", SqlDbType.NVarChar) { Value = st.Id },
+                new SqlParameter("@ht", SqlDbType.NVarChar) { Value = st.Name },
+                new SqlParameter("@em", SqlDbType.VarChar) { Value = st.Email },
+                new SqlParameter("@gt", SqlDbType.Bit) { Value = st.Sex },
+                new SqlParameter("@dc", SqlDbType.NVarChar) { Value = st.Address },
+                new SqlParameter("@sdt", SqlDbType.VarChar) { Value = st.Phone },
+                new SqlParameter("@cc", SqlDbType.VarChar) { Value = st.Cccd },
+                new SqlParameter("@ns", SqlDbType.Date) { Value = st.Birthday }
             };
             base.Edit(sql, lstParam);
         }
