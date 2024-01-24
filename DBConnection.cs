@@ -44,8 +44,9 @@ namespace StudentsManagerment_Proj
                 if (conn.State == ConnectionState.Closed) conn.Open();
                 cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.AddRange(lstParam);
+                dt = new DataTable();
                 dt.Load(cmd.ExecuteReader());
-                return 1;
+                return cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
             {

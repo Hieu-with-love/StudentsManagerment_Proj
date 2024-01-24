@@ -19,7 +19,7 @@ namespace StudentsManagerment_Proj
 
         public void Add(string sql, SqlParameter[] lstParam)
         {
-            if (dbcn.ExcuteQuery(sql, lstParam) == 1)
+            if (dbcn.ExcuteQuery(sql, lstParam) > 0)
             {
                 MessageBox.Show("Thêm thành công");
             }
@@ -27,7 +27,7 @@ namespace StudentsManagerment_Proj
 
         public void Remove(string sql, SqlParameter[] lstParam)
         {
-            if (dbcn.ExcuteQuery(sql, lstParam) == 1)
+            if (dbcn.ExcuteQuery(sql, lstParam) > 0)
             {
                 MessageBox.Show("Xóa thành công");
             }
@@ -35,7 +35,7 @@ namespace StudentsManagerment_Proj
 
         public void Edit(string sql, SqlParameter[] lstParam)
         {
-            if (dbcn.ExcuteQuery(sql, lstParam) == 1)
+            if (dbcn.ExcuteQuery(sql, lstParam) > 0)
             {
                 MessageBox.Show("Cập nhật thành công");
             }
