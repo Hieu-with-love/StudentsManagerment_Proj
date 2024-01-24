@@ -1,17 +1,11 @@
-﻿using System.Windows.Forms;
-namespace StudentsManagerment_Proj
+﻿namespace StudentsManagerment_Proj
 {
-    partial class frmStudent
+    partial class FormTeacher
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-        private GroupBox grbStudent;
-        private DataGridView dgvStudent;
-        private Button btnAdd;
-        private Button btnRemove;
-        private Button btnEdit;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -34,7 +28,7 @@ namespace StudentsManagerment_Proj
         /// </summary>
         private void InitializeComponent()
         {
-            this.grbStudent = new System.Windows.Forms.GroupBox();
+            this.grbTeacher = new System.Windows.Forms.GroupBox();
             this.rdbWoman = new System.Windows.Forms.RadioButton();
             this.rdbMan = new System.Windows.Forms.RadioButton();
             this.txtCCCD = new System.Windows.Forms.TextBox();
@@ -52,42 +46,42 @@ namespace StudentsManagerment_Proj
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.lblId = new System.Windows.Forms.Label();
-            this.dgvStudent = new System.Windows.Forms.DataGridView();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnRemove = new System.Windows.Forms.Button();
+            this.dgvTeacher = new System.Windows.Forms.DataGridView();
             this.btnEdit = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.txtKw = new System.Windows.Forms.TextBox();
+            this.btnRemove = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.lblKw = new System.Windows.Forms.Label();
-            this.grbStudent.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStudent)).BeginInit();
+            this.txtKw = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.grbTeacher.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTeacher)).BeginInit();
             this.SuspendLayout();
             // 
-            // grbStudent
+            // grbTeacher
             // 
-            this.grbStudent.Controls.Add(this.rdbWoman);
-            this.grbStudent.Controls.Add(this.rdbMan);
-            this.grbStudent.Controls.Add(this.txtCCCD);
-            this.grbStudent.Controls.Add(this.txtPhone);
-            this.grbStudent.Controls.Add(this.txtAddress);
-            this.grbStudent.Controls.Add(this.txtEmail);
-            this.grbStudent.Controls.Add(this.txtName);
-            this.grbStudent.Controls.Add(this.dtpBirthday);
-            this.grbStudent.Controls.Add(this.txtId);
-            this.grbStudent.Controls.Add(this.lblBirthday);
-            this.grbStudent.Controls.Add(this.lblCCCD);
-            this.grbStudent.Controls.Add(this.lblPhone);
-            this.grbStudent.Controls.Add(this.lblAddress);
-            this.grbStudent.Controls.Add(this.lblSex);
-            this.grbStudent.Controls.Add(this.lblEmail);
-            this.grbStudent.Controls.Add(this.lblName);
-            this.grbStudent.Controls.Add(this.lblId);
-            this.grbStudent.Location = new System.Drawing.Point(12, 75);
-            this.grbStudent.Name = "grbStudent";
-            this.grbStudent.Size = new System.Drawing.Size(364, 364);
-            this.grbStudent.TabIndex = 0;
-            this.grbStudent.TabStop = false;
-            this.grbStudent.Text = "Dữ liệu sinh viên";
+            this.grbTeacher.Controls.Add(this.rdbWoman);
+            this.grbTeacher.Controls.Add(this.rdbMan);
+            this.grbTeacher.Controls.Add(this.txtCCCD);
+            this.grbTeacher.Controls.Add(this.txtPhone);
+            this.grbTeacher.Controls.Add(this.txtAddress);
+            this.grbTeacher.Controls.Add(this.txtEmail);
+            this.grbTeacher.Controls.Add(this.txtName);
+            this.grbTeacher.Controls.Add(this.dtpBirthday);
+            this.grbTeacher.Controls.Add(this.txtId);
+            this.grbTeacher.Controls.Add(this.lblBirthday);
+            this.grbTeacher.Controls.Add(this.lblCCCD);
+            this.grbTeacher.Controls.Add(this.lblPhone);
+            this.grbTeacher.Controls.Add(this.lblAddress);
+            this.grbTeacher.Controls.Add(this.lblSex);
+            this.grbTeacher.Controls.Add(this.lblEmail);
+            this.grbTeacher.Controls.Add(this.lblName);
+            this.grbTeacher.Controls.Add(this.lblId);
+            this.grbTeacher.Location = new System.Drawing.Point(12, 75);
+            this.grbTeacher.Name = "grbTeacher";
+            this.grbTeacher.Size = new System.Drawing.Size(364, 364);
+            this.grbTeacher.TabIndex = 1;
+            this.grbTeacher.TabStop = false;
+            this.grbTeacher.Text = "Dữ liệu giáo viên";
             // 
             // rdbWoman
             // 
@@ -233,75 +227,75 @@ namespace StudentsManagerment_Proj
             this.lblId.TabIndex = 0;
             this.lblId.Text = "Id";
             // 
-            // dgvStudent
+            // dgvTeacher
             // 
-            this.dgvStudent.AllowUserToAddRows = false;
-            this.dgvStudent.AllowUserToDeleteRows = false;
-            this.dgvStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStudent.Location = new System.Drawing.Point(382, 75);
-            this.dgvStudent.Name = "dgvStudent";
-            this.dgvStudent.ReadOnly = true;
-            this.dgvStudent.RowHeadersWidth = 51;
-            this.dgvStudent.RowTemplate.Height = 24;
-            this.dgvStudent.Size = new System.Drawing.Size(588, 474);
-            this.dgvStudent.TabIndex = 1;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(12, 474);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(77, 36);
-            this.btnAdd.TabIndex = 2;
-            this.btnAdd.Text = "Thêm";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnRemove
-            // 
-            this.btnRemove.Location = new System.Drawing.Point(155, 474);
-            this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(77, 36);
-            this.btnRemove.TabIndex = 3;
-            this.btnRemove.Text = "Xóa";
-            this.btnRemove.UseVisualStyleBackColor = true;
-            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            this.dgvTeacher.AllowUserToAddRows = false;
+            this.dgvTeacher.AllowUserToDeleteRows = false;
+            this.dgvTeacher.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTeacher.Location = new System.Drawing.Point(382, 75);
+            this.dgvTeacher.Name = "dgvTeacher";
+            this.dgvTeacher.ReadOnly = true;
+            this.dgvTeacher.RowHeadersWidth = 51;
+            this.dgvTeacher.RowTemplate.Height = 24;
+            this.dgvTeacher.Size = new System.Drawing.Size(588, 474);
+            this.dgvTeacher.TabIndex = 18;
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(299, 474);
+            this.btnEdit.Location = new System.Drawing.Point(294, 479);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(77, 36);
-            this.btnEdit.TabIndex = 4;
+            this.btnEdit.TabIndex = 21;
             this.btnEdit.Text = "Sửa";
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-            // btnSearch
+            // btnRemove
             // 
-            this.btnSearch.Location = new System.Drawing.Point(857, 24);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(77, 36);
-            this.btnSearch.TabIndex = 5;
-            this.btnSearch.Text = "Tìm kiếm";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnRemove.Location = new System.Drawing.Point(150, 479);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(77, 36);
+            this.btnRemove.TabIndex = 20;
+            this.btnRemove.Text = "Xóa";
+            this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
-            // txtKw
+            // btnAdd
             // 
-            this.txtKw.Location = new System.Drawing.Point(651, 31);
-            this.txtKw.Name = "txtKw";
-            this.txtKw.Size = new System.Drawing.Size(200, 22);
-            this.txtKw.TabIndex = 18;
+            this.btnAdd.Location = new System.Drawing.Point(7, 479);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(77, 36);
+            this.btnAdd.TabIndex = 19;
+            this.btnAdd.Text = "Thêm";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // lblKw
             // 
             this.lblKw.AutoSize = true;
-            this.lblKw.Location = new System.Drawing.Point(576, 34);
+            this.lblKw.Location = new System.Drawing.Point(582, 31);
             this.lblKw.Name = "lblKw";
             this.lblKw.Size = new System.Drawing.Size(56, 16);
-            this.lblKw.TabIndex = 18;
+            this.lblKw.TabIndex = 24;
             this.lblKw.Text = "Từ khóa";
             // 
-            // frmStudent
+            // txtKw
+            // 
+            this.txtKw.Location = new System.Drawing.Point(657, 28);
+            this.txtKw.Name = "txtKw";
+            this.txtKw.Size = new System.Drawing.Size(200, 22);
+            this.txtKw.TabIndex = 23;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(863, 21);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(77, 36);
+            this.btnSearch.TabIndex = 22;
+            this.btnSearch.Text = "Tìm kiếm";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            // 
+            // FormTeacher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -312,15 +306,14 @@ namespace StudentsManagerment_Proj
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.dgvStudent);
-            this.Controls.Add(this.grbStudent);
-            this.Name = "frmStudent";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FStudent";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.grbStudent.ResumeLayout(false);
-            this.grbStudent.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStudent)).EndInit();
+            this.Controls.Add(this.dgvTeacher);
+            this.Controls.Add(this.grbTeacher);
+            this.Name = "FormTeacher";
+            this.Text = "FormTeacher";
+            this.Load += new System.EventHandler(this.FormTeacher_Load);
+            this.grbTeacher.ResumeLayout(false);
+            this.grbTeacher.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTeacher)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -328,26 +321,30 @@ namespace StudentsManagerment_Proj
 
         #endregion
 
-        private Label lblId;
-        private TextBox txtCCCD;
-        private TextBox txtPhone;
-        private TextBox txtAddress;
-        private TextBox txtEmail;
-        private TextBox txtName;
-        private DateTimePicker dtpBirthday;
-        private TextBox txtId;
-        private Label lblBirthday;
-        private Label lblCCCD;
-        private Label lblPhone;
-        private Label lblAddress;
-        private Label lblSex;
-        private Label lblEmail;
-        private Label lblName;
-        private RadioButton rdbWoman;
-        private RadioButton rdbMan;
-        private Button btnSearch;
-        private TextBox txtKw;
-        private Label lblKw;
+        private System.Windows.Forms.GroupBox grbTeacher;
+        private System.Windows.Forms.RadioButton rdbWoman;
+        private System.Windows.Forms.RadioButton rdbMan;
+        private System.Windows.Forms.TextBox txtCCCD;
+        private System.Windows.Forms.TextBox txtPhone;
+        private System.Windows.Forms.TextBox txtAddress;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.DateTimePicker dtpBirthday;
+        private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.Label lblBirthday;
+        private System.Windows.Forms.Label lblCCCD;
+        private System.Windows.Forms.Label lblPhone;
+        private System.Windows.Forms.Label lblAddress;
+        private System.Windows.Forms.Label lblSex;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label lblId;
+        private System.Windows.Forms.DataGridView dgvTeacher;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnRemove;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Label lblKw;
+        private System.Windows.Forms.TextBox txtKw;
+        private System.Windows.Forms.Button btnSearch;
     }
 }
-

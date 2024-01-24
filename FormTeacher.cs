@@ -10,35 +10,35 @@ using System.Windows.Forms;
 
 namespace StudentsManagerment_Proj
 {
-    public partial class frmStudent : Form
+    public partial class FormTeacher : Form
     {
-        StudentDAO stDAO = new StudentDAO();
-        string sqlConn = "SELECT * FROM SinhVien";
-        public frmStudent()
+        TeacherDAO tcDAO = new TeacherDAO();
+        string sqlConn = "SELECT * FROM GiaoVien";
+        public FormTeacher()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void FormTeacher_Load(object sender, EventArgs e)
         {
-            dgvStudent.DataSource = stDAO.LoadDataForDGV(sqlConn);
-            dgvStudent.Columns["id"].HeaderText = "ID";
-            dgvStudent.Columns["hoten"].HeaderText = "Họ tên";
-            dgvStudent.Columns["email"].HeaderText = "Email";
-            dgvStudent.Columns["gioitinh"].HeaderText = "Giới tính";
-            dgvStudent.Columns["diachi"].HeaderText = "Địa chỉ";
-            dgvStudent.Columns["sdt"].HeaderText = "Số điện thoại";
-            dgvStudent.Columns["cccd"].HeaderText = "CCCD";
-            dgvStudent.Columns["ngaysinh"].HeaderText = "Ngày sinh";
+            dgvTeacher.DataSource = tcDAO.LoadDataForDGV(sqlConn);
+            dgvTeacher.Columns["id"].HeaderText = "ID";
+            dgvTeacher.Columns["hoten"].HeaderText = "Họ tên";
+            dgvTeacher.Columns["email"].HeaderText = "Email";
+            dgvTeacher.Columns["gioitinh"].HeaderText = "Giới tính";
+            dgvTeacher.Columns["diachi"].HeaderText = "Địa chỉ";
+            dgvTeacher.Columns["sdt"].HeaderText = "Số điện thoại";
+            dgvTeacher.Columns["cccd"].HeaderText = "CCCD";
+            dgvTeacher.Columns["ngaysinh"].HeaderText = "Ngày sinh";
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             bool gt = rdbWoman.Checked ? true : false;
             Students st = new Students(txtId.Text, txtName.Text, txtEmail.Text, gt, txtAddress.Text, txtPhone.Text, txtCCCD.Text, dtpBirthday.Value);
-            string sql = "INSERT INTO SinhVien(hoten,email,gioitinh,diachi,sdt,cccd,ngaysinh) VALUES(@ht,@em,@gt,@dc,@sdt,@cc,@ns)";
-            stDAO.AddSt(sql,st);
-            dgvStudent.DataSource = stDAO.LoadDataForDGV(sqlConn);
+            string sql = "INSERT INTO GiaoVien(hoten,email,gioitinh,diachi,sdt,cccd,ngaysinh) VALUES(@ht,@em,@gt,@dc,@sdt,@cc,@ns)";
+            tcDAO.AddTc(sql, st);
+            dgvTeacher.DataSource = tcDAO.LoadDataForDGV(sqlConn);
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
@@ -46,8 +46,8 @@ namespace StudentsManagerment_Proj
             bool gt = rdbWoman.Checked ? true : false;
             Students st = new Students(txtId.Text, txtName.Text, txtEmail.Text, gt, txtAddress.Text, txtPhone.Text, txtCCCD.Text, dtpBirthday.Value);
             string sql = "DELETE SinhVien WHERE id = @id";
-            stDAO.RemoveSt(sql,st);
-            dgvStudent.DataSource = stDAO.LoadDataForDGV(sqlConn);
+            tcDAO.RemoveTc(sql, st);
+            dgvTeacher.DataSource = tcDAO.LoadDataForDGV(sqlConn);
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -55,8 +55,8 @@ namespace StudentsManagerment_Proj
             bool gt = rdbWoman.Checked ? true : false;
             Students st = new Students(txtId.Text, txtName.Text, txtEmail.Text, gt, txtAddress.Text, txtPhone.Text, txtCCCD.Text, dtpBirthday.Value);
             string sql = "UPDATE SinhVien SET id=@id,hoten=@ht,email=@em,gioitinh=@gt,diachi=@dc,sdt=@sdt,cccd=@cc,ngaysinh=@ns WHERE id = @id";
-            stDAO.EditSt(sql, st);
-            dgvStudent.DataSource = stDAO.LoadDataForDGV(sqlConn);
+            tcDAO.EditTc(sql, st);
+            dgvTeacher.DataSource = tcDAO.LoadDataForDGV(sqlConn);
         }
     }
 }
