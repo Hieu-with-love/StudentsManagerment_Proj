@@ -1,6 +1,6 @@
 ﻿namespace StudentsManagerment_Proj
 {
-    partial class FormTeacher
+    partial class frmTeacher
     {
         /// <summary>
         /// Required designer variable.
@@ -295,7 +295,7 @@
             this.btnSearch.Text = "Tìm kiếm";
             this.btnSearch.UseVisualStyleBackColor = true;
             // 
-            // FormTeacher
+            // frmTeacher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -308,7 +308,7 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dgvTeacher);
             this.Controls.Add(this.grbTeacher);
-            this.Name = "FormTeacher";
+            this.Name = "frmTeacher";
             this.Text = "FormTeacher";
             this.Load += new System.EventHandler(this.FormTeacher_Load);
             this.grbTeacher.ResumeLayout(false);

@@ -36,8 +36,8 @@ namespace StudentsManagerment_Proj
         {
             bool gt = rdbWoman.Checked ? true : false;
             Students st = new Students(txtId.Text, txtName.Text, txtEmail.Text, gt, txtAddress.Text, txtPhone.Text, txtCCCD.Text, dtpBirthday.Value);
-            string sql = "INSERT INTO SinhVien(hoten,email,gioitinh,diachi,sdt,cccd,ngaysinh) VALUES(@ht,@em,@gt,@dc,@sdt,@cc,@ns)";
-            stDAO.AddSt(sql,st);
+            
+            stDAO.AddSt(st);
             dgvStudent.DataSource = stDAO.LoadDataForDGV(sqlConn);
         }
 
@@ -45,8 +45,7 @@ namespace StudentsManagerment_Proj
         {
             bool gt = rdbWoman.Checked ? true : false;
             Students st = new Students(txtId.Text, txtName.Text, txtEmail.Text, gt, txtAddress.Text, txtPhone.Text, txtCCCD.Text, dtpBirthday.Value);
-            string sql = "DELETE SinhVien WHERE id = @id";
-            stDAO.RemoveSt(sql,st);
+            stDAO.RemoveSt(st);
             dgvStudent.DataSource = stDAO.LoadDataForDGV(sqlConn);
         }
 
@@ -54,8 +53,7 @@ namespace StudentsManagerment_Proj
         {
             bool gt = rdbWoman.Checked ? true : false;
             Students st = new Students(txtId.Text, txtName.Text, txtEmail.Text, gt, txtAddress.Text, txtPhone.Text, txtCCCD.Text, dtpBirthday.Value);
-            string sql = "UPDATE SinhVien SET id=@id,hoten=@ht,email=@em,gioitinh=@gt,diachi=@dc,sdt=@sdt,cccd=@cc,ngaysinh=@ns WHERE id = @id";
-            stDAO.EditSt(sql, st);
+            stDAO.EditSt(st);
             dgvStudent.DataSource = stDAO.LoadDataForDGV(sqlConn);
         }
     }

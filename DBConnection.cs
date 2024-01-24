@@ -12,7 +12,8 @@ namespace StudentsManagerment_Proj
 {
     public class DBConnection
     {
-        SqlConnection conn = new SqlConnection(@"Data Source=(localdb)\mssqllocaldb;Initial Catalog=StudentsManagerment;Integrated Security=True");
+        readonly SqlConnection conn = new SqlConnection(@"Data Source=(localdb)\mssqllocaldb;Initial Catalog=StudentsManagerment;Integrated Security=True");
+        string connectionString = @"Data Source=(localdb)\mssqllocaldb;Initial Catalog=StudentsManagerment;Integrated Security=True";
         SqlCommand cmd;
         DataTable dt;
 
@@ -58,5 +59,25 @@ namespace StudentsManagerment_Proj
                 if (conn.State == ConnectionState.Open) conn.Close();
             }
         }
+        /*public int ExecuteQuery(string sql, SqlParameter[] lstParam)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddRange(lstParam);
+                        return cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Thực thi thất bại.\n" + ex.Message);
+                return 0;
+            }
+        }*/
     }
 }

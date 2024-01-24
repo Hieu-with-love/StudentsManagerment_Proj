@@ -12,9 +12,9 @@ namespace StudentsManagerment_Proj
     public class PersonDAO
     {
         DBConnection dbcn = new DBConnection();
-        public DataTable LoadDataForDGV(string sql)
+        public DataTable LoadDataForDGV(string sqlConn)
         {
-            return dbcn.LoadData(sql);
+            return dbcn.LoadData(sqlConn);
         }
 
         public void Add(string sql, SqlParameter[] lstParam)

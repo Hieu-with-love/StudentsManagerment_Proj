@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace StudentsManagerment_Proj
 {
-    public partial class FormTeacher : Form
+    public partial class frmTeacher : Form
     {
         TeacherDAO tcDAO = new TeacherDAO();
         string sqlConn = "SELECT * FROM GiaoVien";
-        public FormTeacher()
+        public frmTeacher()
         {
             InitializeComponent();
         }
@@ -45,7 +45,7 @@ namespace StudentsManagerment_Proj
         {
             bool gt = rdbWoman.Checked ? true : false;
             Students st = new Students(txtId.Text, txtName.Text, txtEmail.Text, gt, txtAddress.Text, txtPhone.Text, txtCCCD.Text, dtpBirthday.Value);
-            string sql = "DELETE SinhVien WHERE id = @id";
+            string sql = "DELETE GiaoVien WHERE id = @id";
             tcDAO.RemoveTc(sql, st);
             dgvTeacher.DataSource = tcDAO.LoadDataForDGV(sqlConn);
         }
@@ -54,7 +54,7 @@ namespace StudentsManagerment_Proj
         {
             bool gt = rdbWoman.Checked ? true : false;
             Students st = new Students(txtId.Text, txtName.Text, txtEmail.Text, gt, txtAddress.Text, txtPhone.Text, txtCCCD.Text, dtpBirthday.Value);
-            string sql = "UPDATE SinhVien SET id=@id,hoten=@ht,email=@em,gioitinh=@gt,diachi=@dc,sdt=@sdt,cccd=@cc,ngaysinh=@ns WHERE id = @id";
+            string sql = "UPDATE GiaoVien SET id=@id,hoten=@ht,email=@em,gioitinh=@gt,diachi=@dc,sdt=@sdt,cccd=@cc,ngaysinh=@ns WHERE id = @id";
             tcDAO.EditTc(sql, st);
             dgvTeacher.DataSource = tcDAO.LoadDataForDGV(sqlConn);
         }
